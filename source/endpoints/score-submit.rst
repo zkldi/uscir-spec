@@ -9,7 +9,7 @@ Expected Request
 
 .. note::
 
-    As always, all requests are expected to be json, with Content-Type of ``application/json``,
+    As always, all requests are expected to be JSON, with Content-Type of ``application/json``,
 
 .. list-table:: Root
    :widths: 25 25 50
@@ -38,10 +38,10 @@ Chart Object
         - Type
         - Description
     *   - ``artist``
-        - "string"
+        - String
         - The artist who created the song.
     *   - ``title``
-        - "string"
+        - String
         - The song title.
     *   - ``level``
         - Integer (0,20]
@@ -50,13 +50,13 @@ Chart Object
         - 0 | 1 | 2 | 3
         - The difficulty of the chart. 0 = NOV, 1 = ADV, 2 = EXH, 3 = INF.
     *   - ``effector``
-        - "string"
+        - String
         - The effector (charter) for the chart.
     *   - ``illustrator``
-        - "string"
+        - String
         - The illustrator for the chart jacket.
     *   - ``bpm``
-        - "string"
+        - String
         - A string representing BPM. For charts with multiple bpms, they are separated by a hyphen, like x.xx-y.yy.
 
 ************
@@ -74,7 +74,7 @@ Score Object
         - Integer [0, 10'000'000]
         - The numeric score the user achieved.
     *   - ``chartHash``
-        - "string"
+        - String
         - The unique identifier for the chart the user played.
     *   - ``gameflags``
         - Integer [0, 63]
@@ -120,25 +120,35 @@ Returns the standard API response, with ``body`` as follows:
         - Description
     *   - ``score``
         - Server Score Object
-        - A Server Score object representing the users personal best score.
+        - A Server Score object representing the user's personal best score.
     *   - ``serverRecord``
         - Server Score Object
         - A Server Score object representing the current server record.
     *   - ``adjacentAbove``
         - Array<Server Score Object>
-        - An array of 0 to 2 Server Scores adjacently above the user's PB. This specifically excludes the serverRecord.
+        - An array of 0 to N Server Scores adjacently above the user's PB.
     *   - ``adjacentBelow``
         - Array<Server Score Object>
-        - An array of 0 to 2 Server scores adjacently below the user's PB.
+        - An array of 0 to N Server scores adjacently below the user's PB.
     *   - ``isPB``
         - Boolean
-        - Whether the sent score was the users PB or not.
+        - True if the score sent in the request is the user's new PB.
     *   - ``isServerRecord``
         - Boolean
-        - Whether the sent score was the Server Record or not.
+        - True if the score sent in the request is the new server record.
 
 .. warning::
     ``body.score`` **always returns the users PB**. It does **NOT** necessarily return the score you sent.
+
+.. warning::
+    Several key assumptions are made about the response by the client, which must be upheld by the server. They are as follows:
+    * ``adjacentAbove`` will never contain the current server record.
+    * The returned scores will always descend in the set [...``adjacentAbove``, ``score``, ...``adjacentBelow``]. For clarification, see the note below.
+    * An individual user should only have a maximum of one score in the above set. This is because the scores sent should always be personal bests, not any stored score.
+    * As a corollary to the above, the requesting user's scores can never appear in the adjacent scores, since their personal best will always be contained in ``score``.
+
+.. note::
+    The server may decide on the value of N to use for adjacentAbove/Below. However, there is limited space to display the scores. For maximum compatibility with skins, a value of 2 or 3 is recommended.
 
 .. note::
     The use for ``score.adjacent[Above|Below]`` and ``score.serverRecord`` is illustrated in the table below.
@@ -176,7 +186,7 @@ Returns the standard API response, with ``body`` as follows:
 Server Score Object
 *******************
 
-The server returns scores in a slightly different, more easy to interpret format.
+The format of scores returned by the server are as follows:
 
 .. list-table:: Server Score Object
     :widths: 25 25 50
@@ -208,10 +218,10 @@ The server returns scores in a slightly different, more easy to interpret format
         - The ranking for this score, (i.e. #5).
     *   - ``gaugeMod``
         - "NORMAL" | "HARD",
-        - The gaugeMod used for this score.
+        - The gauge used for this score.
     *   - ``noteMod``
-        - "NORMAL" | "MIRROR" | "RANDOM"
-        - The noteMod used for this score.
+        - "NORMAL" | "MIRROR" | "RANDOM" | "MIR-RAN"
+        - The note modifier used for this score.
     *   - ``username``
-        - "string"
+        - String
         - The username who achieved this score.

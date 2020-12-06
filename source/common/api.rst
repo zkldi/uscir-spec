@@ -10,14 +10,12 @@ such as POSTing ``/score/submit`` when a score is achieved.
 
 USC-IR only makes use of GET and POST, to simplify implementation.
 
-USC-IR is intended to operate **ontop** of HTTP(S), to make the results of requests more obvious.
-That is to say, USC will look at the HTTP status code to determine if the request hit the server or not.
+USC-IR is intended to operate **on top** of HTTP(S), to simplify its implementation.
+Any request that is received by the server successfully should be responded to with a HTTP 200 OK.
+Rejection reasons that are not a failed request should be indicated using a USC-IR status code in the response body, as detailed in Response Format.
 
-As much as this sounds like a massive code smell (I wasn't initially fond of it either!), it works out very neatly implementation wise,
-allowing us to very easily differentiate between errored requests to a down/malfunctioning server, and errored requests due to improper user input.
-
-.. warning::
-    As a result, USC-IR expects ``200 OK``, for **ANY** response that successfully reaches the server, regardless of how the server interpreted the request.
+.. note::
+    Any HTTP response bearing a non-200 status code will be interpreted by the client as a generic failure, and will not be consumed.
 
 =================
 Request Format
@@ -29,7 +27,7 @@ To authenticate with the server, users are expected to send an Authorization hea
 
 How the server distributes these tokens is up to them, but they are to be used to authenticate who is making what request.
 
-Other data requested depends on each individual endpoint.
+The body sent is dependent on the endpoint targeted by the request.
 
 =================
 Response Format
@@ -38,20 +36,21 @@ Response Format
 All data returned from the server is in JSON format.
 
 .. note::
-    As noted above, if the server returns anything other than ``200 OK`` , the response body should not be parsed or consumed.
+    As noted above, if the server returns a HTTP code other than ``200 OK`` , the response body will not be consumed.
 
+The below table indicates the two-digit USC-IR status codes to be used by the server in response to a request.
 Given that we use HTTP status codes to determine whether our *request* succeeded, USC-IR implements two digit integer ``statusCode`` s to indicate the status of a request.
 
-==============  =======
-``statusCode``  Meaning
-==============  =======
-20              Request successful!
-40              Bad/Malformed Request.
-41              Unauthorised.
-42              Server Refusing to accept score for this chart.
-43              Requesting user is banned.
-50              Internal Server Error.
-==============  =======
+============== ============= =======
+``statusCode`` Title         Meaning
+============== ============= =======
+20             Success       Request succeeded.
+40             Bad Request   The request was malformed.
+41             Unauthorized  No token, or an invalid token, was provided.
+42             Chart Refused The server is not accepting scores for this chart.
+43             Forbidden     The token has been banned.
+50             Server Error  The server encountered an error while handling the request.
+============== ============= =======
 
 ###################
 Always Present Keys
@@ -70,8 +69,8 @@ Returned JSON objects will *always* have these keys.
      - 20 | 40 | 41 | 42 | 43 | 50
      - See table above.
    * - ``description``
-     - "string"
-     - A user-readable description of the server response. Doubles as a human readable error message.
+     - String
+     - A human-readable error message, which can be displayed to the user.
 
 ###################
 Conditional Keys
@@ -89,4 +88,3 @@ These are keys that are only present under certain scenarios, such as keys that 
    * - ``body``
      - Object
      - Only present on ``statusCode 20``. Contains the results of your request (such as score data, chart data, etc.)
-
