@@ -16,9 +16,16 @@ Feel free to contact either of the people behind this spec, at ``zkldi#2965``, o
 .. toctree::
     :maxdepth: 2
     :caption: Endpoints:
-    
+
     endpoints/score-submit.rst
     endpoints/chart-charthash.rst
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Skinning:
+
+    skinning/globals
+    skinning/resultscreen
 
 .. meta::
     :description: untitled_sdvx_clone Internet Ranking Spec.
