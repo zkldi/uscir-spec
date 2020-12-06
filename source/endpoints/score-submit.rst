@@ -144,7 +144,7 @@ Returns the standard API response, with ``body`` as follows:
     Several key assumptions are made about the response by the client, which must be upheld by the server. They are as follows:
 
     * ``adjacentAbove`` will never contain the current server record.
-    * The returned scores will always descend in the set [...``adjacentAbove``, ``score``, ...``adjacentBelow``]. For clarification, see the note below.
+    * The returned scores will always descend in the set [... ``adjacentAbove``, ``score``, ... ``adjacentBelow``]. For clarification, see the note below.
     * An individual user should only have a maximum of one score in the above set. This is because the scores sent should always be personal bests, not any stored score.
     * As a corollary to the above, the requesting user's scores can never appear in the adjacent scores, since their personal best will always be contained in ``score``.
 
