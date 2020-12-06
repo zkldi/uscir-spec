@@ -30,10 +30,3 @@ Feel free to contact either of the people behind this spec, at ``zkldi#2965``, o
 .. meta::
     :description: untitled_sdvx_clone Internet Ranking Spec.
     :keywords: Docs, usc, sdvx, ksm, IR, internet ranking
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`search`
