@@ -69,7 +69,7 @@ Returned JSON objects will *always* have these keys.
      - See table above.
    * - ``description``
      - String
-     - A human-readable error message, which can be displayed to the user.
+     - A human-readable message, which can be displayed to the user.
 
 ###################
 Conditional Keys
