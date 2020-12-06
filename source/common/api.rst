@@ -39,7 +39,6 @@ All data returned from the server is in JSON format.
     As noted above, if the server returns a HTTP code other than ``200 OK`` , the response body will not be consumed.
 
 The below table indicates the two-digit USC-IR status codes to be used by the server in response to a request.
-Given that we use HTTP status codes to determine whether our *request* succeeded, USC-IR implements two digit integer ``statusCode`` s to indicate the status of a request.
 
 ============== ============= =======
 ``statusCode`` Title         Meaning
