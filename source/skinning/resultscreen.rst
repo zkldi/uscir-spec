@@ -4,6 +4,7 @@ Result Screen
 The following fields are added to the ``result`` table on the results screen.
 
 .. code-block:: c#
+
     int irState //current state of the IR score submission request (a USC-IR code, including extensions 0/10/60)
     string irDescription //the description in the IR response (nil if irState is 0 or 10)
     ServerScore[] irScores //more details below, nil if irState != 20
@@ -15,6 +16,7 @@ ServerScore
 irScores is an array of ServerScores, whose structure matches the ServerScore structure detailed in the score submission endpoint page, with these two additions:
 
 .. code-block:: c#
+
     bool yours //this score belongs to the current player
     bool justSet //this score belongs to the current player, and is the score that was just achieved.
 
