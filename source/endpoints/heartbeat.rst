@@ -7,7 +7,7 @@ Used to check your connection to the server, and receive some basic information.
 Expected Request
 ################
 
-No data is expected, other than the Authorization header (which should be present on all requests.)
+No data is expected.
 
 #################
 Expected Response
