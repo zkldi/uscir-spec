@@ -25,8 +25,11 @@ Expected Response
         - Type
         - Description
     *   - ``serverTime``
-        - Integer
+        - Integer (Unix Seconds)
         - The current time according to the server.
     *   - ``serverName``
         - String
         - The name of the server. This may be displayed to the user.
+    *   - ``irVersion``
+        - String
+        - The version of this spec implemented by the IR.
