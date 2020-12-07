@@ -106,7 +106,7 @@ Score Object
     Make sure to account for this if your server expects a different format for time!
 
 ################
-Response Data
+Expected Response
 ################
 
 Returns the standard API response, with ``body`` as follows:
