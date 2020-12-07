@@ -3,10 +3,15 @@ IR Globals
 
 This page documents variables and functions added to the global scope which are accessible in every script.
 
-IRState Constants
+IRData
 ##################
 
-The following constants are accessible under the ``IRState`` table, which correspond to the USC-IR status codes for use in skins.
+IRData contains values that are relevant to skins intending to make use of the IR.
+
+States
+*******
+
+The following constants are accessible under the ``IRData.States`` table, which correspond to the USC-IR status codes for use in skins.
 There are also three extended codes, which are not sent by the server but are instead used by USC. The meaning is expressed below.
 
 ============== =====
@@ -26,6 +31,12 @@ RequestFailure 60
 * Unused: IR is not being used by the client (no base URL has been specified, etc.)
 * Pending: Request has not yet received a response.
 * RequestFailure: The request failed for a generic reason (non-200 HTTP code, malformed response, etc.)
+
+
+Active
+*******
+
+The value of ``IRData.Active`` is ``true`` if an IR URL has been set in the config. Otherwise, it is false.
 
 Request Functions
 #################
