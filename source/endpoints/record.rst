@@ -13,7 +13,7 @@ No data is expected.
 Expected Response
 #################
 
-| If this chart is not tracked, the server will respond with 42.
+| If this chart is not, and will not be tracked, the server will respond with 42.
 | Otherwise, the server will respond with 20, and the following information in the body:
 
 .. list-table:: Body
