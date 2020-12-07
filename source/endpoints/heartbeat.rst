@@ -13,9 +13,7 @@ No data is expected, other than the Authorization header (which should be presen
 Expected Response
 #################
 
-| If authorization fails, the server will respond with 41.
-| If the provided token is banned, the server will respond with 43.
-| Otherwise, the server will respond with 20, and some basic information in the ``body``:
+The server should respond with 20, and some basic information in the ``body``:
 
 .. list-table:: Body
     :widths: 25 25 50
