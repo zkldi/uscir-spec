@@ -17,6 +17,7 @@ Feel free to contact either of the people behind this spec, at ``zkldi#2965``, o
     :maxdepth: 2
     :caption: Endpoints:
 
+    endpoints/heartbeat.rst
     endpoints/score-submit.rst
     endpoints/chart-charthash.rst
 
