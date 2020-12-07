@@ -51,6 +51,9 @@ The below table indicates the two-digit USC-IR status codes to be used by the se
 50             Server Error  The server encountered an error while handling the request.
 ============== ============= =======
 
+.. note::
+    It is expected that ALL requests will be authorized: i.e., every endpoint should be capable of returning 41 or 43 if necessary.
+
 ###################
 Always Present Keys
 ###################
