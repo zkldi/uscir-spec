@@ -22,7 +22,6 @@ Feel free to contact either of the people behind this spec, at ``zkldi#2965``, o
     endpoints/chart-charthash.rst
 
 .. toctree::
-    :maxdepth: 2
     :caption: Skinning:
 
     skinning/globals
