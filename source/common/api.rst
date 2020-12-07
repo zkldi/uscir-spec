@@ -89,7 +89,7 @@ These are keys that are only present under certain scenarios, such as keys that 
      - Must be present on ``statusCode 20``. Contains the results of your request (such as score data, chart data, etc.)
 
 
-
+=======================
 Endpoint Commonalities
 =======================
 
@@ -101,7 +101,7 @@ All endpoints must obey the following assumptions:
     * If the player makes a request for the server record, and receives a 42, the player may reasonably assume that they do not want to play this chart, as their score would not be saved by the IR.
     * If the player makes a request for the server record, and the server has no scores, but would accept this player's score as the new record if they were to play it, the correct response is 20, with a null record object. The client may choose to display this as a greyed out ``00000000``, as SDVX does itself.
 
-
+======================
 Shared Structures
 ======================
 
