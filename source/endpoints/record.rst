@@ -26,6 +26,3 @@ Expected Response
     *   - ``record``
         - Server Score Object
         - The current server record. In the event of this chart being tracked but having no scores, this may be null.
-
-.. note::
-    Please see the Score Submission endpoint page for documentation on Server Score structure.
