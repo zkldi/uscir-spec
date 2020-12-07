@@ -1,7 +1,7 @@
-GET /
+Heartbeat - GET /
 ==================================
 
-Used to check your connection to the server.
+Used to check your connection to the server, and receive some basic information.
 
 ################
 Expected Request
@@ -13,6 +13,20 @@ No data is expected, other than the Authorization header (which should be presen
 Expected Response
 #################
 
-The server will return 20, and an empty object for ``body``, if the connection is okay.
-The server will return 41 if Authorization fails.
-The server will return 43 if the token provided is banned by the network.
+| If authorization fails, the server will respond with 41.
+| If the provided token is banned, the server will respond with 43.
+| Otherwise, the server will respond with 20, and some basic information in the ``body``:
+
+.. list-table:: Body
+    :widths: 25 25 50
+    :header-rows: 1
+
+    *   - Key
+        - Type
+        - Description
+    *   - ``serverTime``
+        - Integer
+        - The current time according to the server.
+    *   - ``serverName``
+        - String
+        - The name of the server. This may be displayed to the user.
