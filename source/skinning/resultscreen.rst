@@ -9,6 +9,9 @@ The following fields are added to the ``result`` table on the results screen.
     string irDescription //the description in the IR response (nil if irState is 0 or 10)
     ServerScore[] irScores //more details below, nil if irState != 20
 
+.. note::
+        This screen is a special case where the request will be automatically performed by the game, rather than being requested in Lua.
+
 
 ServerScore
 ***********

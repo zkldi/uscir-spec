@@ -1,4 +1,4 @@
-GET /charts/:chartHash
+Chart Tracked - GET /charts/:chartHash
 ==================================
 
 Used to check if the server will accept a score for a given chart in advance of submitting it.
