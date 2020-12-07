@@ -58,3 +58,8 @@ ChartTracked(hash, callback)
 ****************************
 
 Performs a Chart Tracked request for the chart with the provided hash.
+
+Record(hash, callback)
+*********************
+
+Performs a Record request for the chart with the provided hash.
