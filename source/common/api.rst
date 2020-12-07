@@ -91,7 +91,7 @@ These are keys that are only present under certain scenarios, such as keys that 
 
 
 Endpoint Commonalities
-**********************
+=======================
 
 All endpoints must obey the following assumptions:
 
@@ -103,7 +103,7 @@ All endpoints must obey the following assumptions:
 
 
 Shared Structures
-*****************
+======================
 
 Several structures will be reused multiple times in this specification. Any such structures are detailed below, to avoid repetition.
 
