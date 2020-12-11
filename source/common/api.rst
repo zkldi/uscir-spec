@@ -134,7 +134,7 @@ This structure is the common format for a 'score' that the server will respond w
     *   - ``near``
         - Integer
         - Hits inside the near window.
-    *   - ``miss``
+    *   - ``error``
         - Integer
         - Missed notes.
     *   - ``ranking``

@@ -88,10 +88,10 @@ Score Object
     *   - ``crit``
         - Integer
         - Hits inside the critical window.
-    *   - ``almost``
+    *   - ``near``
         - Integer
         - Hits inside the near window.
-    *   - ``miss``
+    *   - ``error``
         - Integer
         - Missed notes.
     *   - ``windows``
