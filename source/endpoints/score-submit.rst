@@ -37,6 +37,9 @@ Chart Object
     *   - Key
         - Type
         - Description
+    *   - ``chartHash``
+        - String
+        - The unique identifier for the chart the user played.
     *   - ``artist``
         - String
         - The artist who created the song.
@@ -73,9 +76,6 @@ Score Object
     *   - ``score``
         - Integer [0, 10'000'000]
         - The numeric score the user achieved.
-    *   - ``chartHash``
-        - String
-        - The unique identifier for the chart the user played.
     *   - ``gameflags``
         - Integer [0, 63]
         - The flags this score was achieved with. This is a bitwise combination of 6 flags. In smallest-to-largest order, these are Hard Gauge, Mirror, Random, Auto-BT, Auto-Hold, Auto-Laser.
