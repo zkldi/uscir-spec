@@ -1,4 +1,4 @@
-Score Submission - POST /score/submit
+Score Submission - POST /scores
 ==================================
 
 Sends a score to the server.
