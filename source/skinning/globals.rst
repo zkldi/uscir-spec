@@ -24,6 +24,7 @@ BadRequest     40
 Unauthorized   41
 ChartRefused   42
 Forbidden      43
+NotFound       44
 ServerError    50
 RequestFailure 60
 ============== =====
@@ -74,3 +75,8 @@ Record(hash, callback)
 *********************
 
 Performs a Record request for the chart with the provided hash.
+
+Leaderboard(hash, mode, n, callback)
+*********************
+
+Performs a Leaderboard request for the chart with the provided hash, with parameters mode and n.

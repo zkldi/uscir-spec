@@ -109,7 +109,9 @@ Score Object
 Expected Response
 ################
 
-Returns the standard API response, with ``body`` as follows:
+| If the server refuses to track this chart, e.g. because it is blacklisted, or because the server does not know of it and rejects unknown charts, it should respond with ``statusCode 42``.
+
+Otherwise, returns the standard API response, with ``body`` as follows:
 
 .. list-table:: Body
     :widths: 25 25 50
@@ -136,6 +138,9 @@ Returns the standard API response, with ``body`` as follows:
     *   - ``isServerRecord``
         - Boolean
         - True if the score sent in the request is the new server record.
+    *   - ``sendReplay``
+        - String
+        - If provided, the server is requesting that the replay be sent using the value of this key as the identifier.
 
 .. warning::
     ``body.score`` **always returns the users PB**. It does **NOT** necessarily return the score you sent.

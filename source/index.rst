@@ -20,6 +20,7 @@ Feel free to contact either of the people behind this spec, at ``zkldi#2965``, o
     endpoints/heartbeat.rst
     endpoints/chart-charthash.rst
     endpoints/record.rst
+    endpoints/leaderboard.rst
     endpoints/score-submit.rst
 
 .. toctree::

@@ -13,6 +13,5 @@ Request data is entirely in the URL; viz. the value of ``:chartHash`` should be 
 Expected Response
 #################
 
-The server will respond with a ``statusCode`` of 42, if the server will refuse a score for this chart.
-If the server is currently tracking this chart, OR if the server will begin tracking this chart upon receiving a score,
-the correct response is 20. These cases may be distinguished for presentation to the user by a differing description.
+| If the server would refuse a score for this chart (e.g. it is blacklisted, or the server does not know it and does not accept unknown charts), respond with ``statusCode 42``.
+| Otherwise, respond with ``statusCode 20``. The difference between a tracked chart and an unknown chart on a server that accepts unknown charts may be distinguished in the response description.

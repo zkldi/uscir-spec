@@ -22,7 +22,7 @@ copyright = '2020, winter, zkldi'
 author = 'winter, zkldi'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0.0a'
+release = '0.2.0-a'
 
 # -- General configuration ---------------------------------------------------
 

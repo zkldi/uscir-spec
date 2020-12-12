@@ -21,7 +21,7 @@ Rejection reasons that are not a failed request should be indicated using a USC-
 Request Format
 =================
 
-All data sent to the server is expected to be in JSON format, with ``Content-Type: application/json`` set in request headers.
+Unless otherwise specified, all data sent to the server is expected to be in JSON format, with ``Content-Type: application/json`` set in request headers.
 
 To authenticate with the server, users are expected to send an Authorization header, containing ``Bearer <token>``.
 
@@ -48,6 +48,7 @@ The below table indicates the two-digit USC-IR status codes to be used by the se
 41             Unauthorized  No token, or an invalid token, was provided.
 42             Chart Refused The server is not accepting scores for this chart.
 43             Forbidden     The token has been banned.
+44             Not Found     The requested item was not found.
 50             Server Error  The server encountered an error while handling the request.
 ============== ============= =======
 
@@ -96,10 +97,6 @@ Endpoint Commonalities
 All endpoints must obey the following assumptions:
 
 1. All endpoints are authenticated. This means the Authorization header must be provided in the request, and that the server must respond with ``41 Unauthorized`` or ``43 Forbidden`` as and when appropriate.
-2. In the case of an endpoint concerning a chart, ``42 Chart Refused`` means explicitly that the server will refuse to store a score for this chart if it were to receive one. It does not just mean that the server has no scores for this chart. The below bullet point list clarifies the reason for this behavior by using the Record endpoint as an example.
-
-    * If the player makes a request for the server record, and receives a 42, the player may reasonably assume that they do not want to play this chart, as their score would not be saved by the IR.
-    * If the player makes a request for the server record, and the server has no scores, but would accept this player's score as the new record if they were to play it, the correct response is 20, with a null record object. The client may choose to display this as a greyed out ``00000000``, as SDVX does itself.
 
 ======================
 Shared Structures
