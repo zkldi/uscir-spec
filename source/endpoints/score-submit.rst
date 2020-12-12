@@ -7,9 +7,6 @@ Sends a score to the server.
 Expected Request
 ################
 
-.. note::
-
-    As always, all requests are expected to be JSON, with Content-Type of ``application/json``,
 
 .. list-table:: Root
    :widths: 25 25 50
