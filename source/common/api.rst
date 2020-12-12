@@ -66,7 +66,7 @@ Returned JSON objects will *always* have these keys.
      - Type
      - Description
    * - ``statusCode``
-     - 20 | 40 | 41 | 42 | 43 | 50
+     - 20 | 40 | 41 | 42 | 43 | 44 | 50
      - See table above.
    * - ``description``
      - String
