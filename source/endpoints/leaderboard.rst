@@ -33,4 +33,4 @@ Expected Response
         - Description
     *   - ``scores``
         - Array<Server Score Object>
-        - The requested scores.
+        - The requested scores, sorted in descending order by their ``score`` field.
