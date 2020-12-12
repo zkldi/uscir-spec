@@ -19,6 +19,6 @@ It will also contain the replay file under the key ``replay``.
 Expected Response
 #################
 
-| If the identifier does not correspond to one of the requesting player's scores, the server should respond with ``statusCode 44``
+| If the identifier does not correspond to one of the requesting player's scores, the server should respond with ``statusCode 44``.
 | Otherwise, if the identified score already has a replay, the server should respond with ``statusCode 40``.
 | Otherwise, the server can respond with ``statusCode 20``, and the regular format thereof. No particular data is required in the body response.
