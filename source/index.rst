@@ -22,6 +22,7 @@ Feel free to contact either of the people behind this spec, at ``zkldi#2965``, o
     endpoints/record.rst
     endpoints/leaderboard.rst
     endpoints/score-submit.rst
+    endpoints/replay-submit.rst
 
 .. toctree::
     :caption: Skinning:
