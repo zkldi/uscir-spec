@@ -91,9 +91,12 @@ Score Object
     *   - ``error``
         - Integer
         - Missed notes.
+    *   - ``options``
+        - Options Object
+        - The options in use. Includes gauge type, etc, see below.
     *   - ``windows``
-        - Object: {``perfect`` , ``good`` , ``hold`` , ``miss`` }
-        - Indicates what the hit windows were for this score. The defaults are; 46, 92, 138 and 250, respectively.
+        - Object: {``perfect`` , ``good`` , ``hold`` , ``miss``, ``slam`` }
+        - Indicates what the hit windows were for this score. The defaults are; 46, 150, 150, 300, and 84 respectively.
 
 .. warning::
     It is highly advised for servers to reject scores with non-standard ``score.windows`` unless specifically implementing a hard-mode option.
@@ -101,6 +104,33 @@ Score Object
 .. warning::
     ``score.timestamp`` is in unix seconds, which is different to the default in languages of the JavaScript family (unix_miliseconds) and the .NET family (Ticks).
     Make sure to account for this if your server expects a different format for time!
+
+**************
+Options Object
+**************
+
+.. list-table:: Options
+    :widths: 25 25 50
+    :header-rows: 1
+
+    *   - Key
+        - Type
+        - Description
+    *   - ``gaugeType``
+        - Integer
+        - An enum value representing the gauge type used. 0 = normal, 1 = hard. Further values are not currently specified.
+    *   - ``gaugeOpt``
+        - Integer
+        - Not used at the moment. Intended for blastive rank, etc. in the future.
+    *   - ``mirror``
+        - Boolean
+        - If mirror is enabled.
+    *   - ``random``
+        - Boolean
+        - If random is enabled.
+    *   - ``autoFlags``
+        - Integer
+        - A bitfield of elements of the game that are automated. Any non-zero value means that the score was at least partially auto.
 
 ################
 Expected Response
