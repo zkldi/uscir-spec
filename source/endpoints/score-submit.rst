@@ -44,7 +44,7 @@ Chart Object
         - String
         - The song title.
     *   - ``level``
-        - Integer (0,20]
+        - Integer [1,20]
         - The difficulty level assigned to this chart.
     *   - ``difficulty``
         - 0 | 1 | 2 | 3
