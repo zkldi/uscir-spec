@@ -14,7 +14,7 @@ Expected Response
 #################
 
 | If the server refuses to track this chart, e.g. because it is blacklisted, it should respond with ``statusCode 42``
-| Otherwise, if the server does not know of this chart, it should respond with ``statusCode 44``.
+| Otherwise, if the server does not know of this chart, it should respond with ``statusCode 44``. This is also the correct response if the server is aware of the chart but has no scores on it.
 | Otherwise, the server will respond with 20, and the following information in the body:
 
 .. list-table:: Body
