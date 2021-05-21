@@ -97,7 +97,8 @@ Endpoint Commonalities
 All endpoints must obey the following assumptions:
 
 1. All endpoints are authenticated. This means the Authorization header must be provided in the request, and that the server must respond with ``41 Unauthorized`` or ``43 Forbidden`` as and when appropriate.
-2. An endpoint should respond with ``40 Bad Request`` for any request which has parameters that are invalid - this includes parameters which the server does not support, for instance an unsupported leaderboard mode. 
+2. An endpoint should respond with ``40 Bad Request`` for any request which has parameters that are invalid - this includes parameters which the server does not support, for instance an unsupported leaderboard mode.
+
 ======================
 Shared Structures
 ======================
