@@ -73,9 +73,6 @@ Score Object
     *   - ``score``
         - Integer [0, 10'000'000]
         - The numeric score the user achieved.
-    *   - ``gameflags``
-        - Integer [0, 63]
-        - The flags this score was achieved with. This is a bitwise combination of 6 flags. In smallest-to-largest order, these are Hard Gauge, Mirror, Random, Auto-BT, Auto-Hold, Auto-Laser.
     *   - ``gauge``
         - Float
         - The gauge the user had at the end of the chart. Depending on gameflags, this should be used by the server to determine the clear type on the chart.
