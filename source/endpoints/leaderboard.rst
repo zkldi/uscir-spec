@@ -7,7 +7,7 @@ Used to retrieve some particular useful subset of the scores from the server.
 Expected Request
 ################
 
-The request is expected to include query parameters ``mode`` and ``n``, where n is the limit of scores requested and ``mode`` is one of the following:
+The request is expected to include query parameters ``mode`` and ``n``, where ``n`` is the limit of scores requested and ``mode`` is one of the following:
 
 ============== =======
 mode           Meaning
