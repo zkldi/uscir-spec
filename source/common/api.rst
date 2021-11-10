@@ -44,6 +44,7 @@ The below table indicates the two-digit USC-IR status codes to be used by the se
 ``statusCode`` Title         Meaning
 ============== ============= =======
 20             Success       Request succeeded.
+22             Accepted      Request was received, but not yet acted upon.
 40             Bad Request   The request was malformed.
 41             Unauthorized  No token, or an invalid token, was provided.
 42             Chart Refused The server is not accepting scores for this chart.
@@ -66,7 +67,7 @@ Returned JSON objects will *always* have these keys.
      - Type
      - Description
    * - ``statusCode``
-     - 20 | 40 | 41 | 42 | 43 | 44 | 50
+     - 20 | 22 | 40 | 41 | 42 | 43 | 44 | 50
      - See table above.
    * - ``description``
      - String
