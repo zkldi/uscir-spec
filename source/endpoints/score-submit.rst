@@ -134,6 +134,7 @@ Expected Response
 ################
 
 | If the server refuses to track this chart, e.g. because it is blacklisted, or because the server does not know of it and rejects unknown charts, it should respond with ``statusCode 42``.
+| If the server has received the score, but is holding it in a queue, e.g. for servers which only begin displaying new charts after a certain number of unique players submit scores for it, it should respond with ``statusCode 22``.
 
 Otherwise, returns the standard API response, with ``body`` as follows:
 
