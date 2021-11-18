@@ -85,6 +85,12 @@ Score Object
     *   - ``near``
         - Integer
         - Hits inside the near window.
+    *   - ``early``
+        - Integer
+        - Hits inside the near window which were early.
+    *   - ``late``
+        - Integer
+        - Hits inside the near window which were late.
     *   - ``error``
         - Integer
         - Missed notes.
