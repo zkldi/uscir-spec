@@ -91,6 +91,9 @@ Score Object
     *   - ``late``
         - Integer
         - Hits inside the near window which were late.
+    *   - ``combo``
+        - Integer
+        - Best combo reached.
     *   - ``error``
         - Integer
         - Missed notes.
