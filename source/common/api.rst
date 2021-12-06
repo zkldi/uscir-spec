@@ -140,7 +140,7 @@ This structure is the common format for a 'score' that the server will respond w
         - Integer
         - The ranking for this score, (i.e. #5).
     *   - ``gaugeMod``
-        - "NORMAL" | "HARD",
+        - "NORMAL" | "HARD" | "PERMISSIVE",
         - The gauge used for this score.
     *   - ``noteMod``
         - "NORMAL" | "MIRROR" | "RANDOM" | "MIR-RAN"
