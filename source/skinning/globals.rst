@@ -20,6 +20,7 @@ Name           Value
 Unused         0
 Pending        10
 Success        20
+Accepted       22
 BadRequest     40
 Unauthorized   41
 ChartRefused   42
