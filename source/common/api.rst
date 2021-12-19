@@ -88,7 +88,7 @@ These are keys that are only present under certain scenarios, such as keys that 
      - Description
    * - ``body``
      - Object
-     - Must be present on ``statusCode 20``. Contains the results of your request (such as score data, chart data, etc.)
+     - Must be present on ``statusCode 2X``. Contains the results of your request (such as score data, chart data, etc.)
 
 
 =======================
